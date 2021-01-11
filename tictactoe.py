@@ -65,10 +65,11 @@ def comp(level):
         print('Making move level "easy"')
         move(random.choice(empty_cells))
 
+def menu(playerinput):
+    None
 
 # cells = [x for x in input().replace("_", " ")]
-
-cells = "         "
+cells = "         "  # game state, start at empty
 cells = [x for x in cells]
 board()
 repeat = True
@@ -79,3 +80,13 @@ while repeat:
     if repeat and move_current:
         comp("easy")
         board()
+
+
+## TODO Redo code to allow for multiple games
+# while repeat:
+#     # menu
+#     while gamerepeat
+#         #humanmove
+#         if repeat and move_current:
+#             comp(difficulty)
+#             board
