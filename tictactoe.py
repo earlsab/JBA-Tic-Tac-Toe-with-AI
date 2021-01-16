@@ -2,10 +2,10 @@ import random
 
 def board():
     print(f"""---------
-| {cells[0]} {cells[1]} {cells[2]} |
-| {cells[3]} {cells[4]} {cells[5]} |
-| {cells[6]} {cells[7]} {cells[8]} |
----------""")
+    | {cells[0]} {cells[1]} {cells[2]} |
+    | {cells[3]} {cells[4]} {cells[5]} |
+    | {cells[6]} {cells[7]} {cells[8]} |
+    ---------""")
 
 
 def move(xy):
@@ -65,28 +65,31 @@ def comp(level):
         print('Making move level "easy"')
         move(random.choice(empty_cells))
 
-def menu(playerinput):
-    None
 
-# cells = [x for x in input().replace("_", " ")]
-cells = "         "  # game state, start at empty
-cells = [x for x in cells]
-board()
-repeat = True
-while repeat:
-    move(input("Enter the coordinates: "))
-    board()
-    game_state()
-    if repeat and move_current:
-        comp("easy")
-        board()
+def setGame(): 
+    global cells, status
+    if status == "ignore_menu":
+        pass
+    elif status == "player_menu":
+        cells = "         "  # game state, start at empty
+        cells = [x for x in cells]
+# repeat = True
+# gamerepeat = True
 
-
-## TODO Redo code to allow for multiple games
 # while repeat:
-#     # menu
-#     while gamerepeat
-#         #humanmove
+#     setGame(input)
+#     while gamerepeat:
+#         move(input("Enter the coordinates: "))
+#         board()
+#         game_state()
 #         if repeat and move_current:
-#             comp(difficulty)
+#             comp("easy")
 #             board
+
+
+repeat = True
+status = "player_menu"  # possible options "player_menu", "charactersel_menu", "ignore_menu"
+while repeat:
+    setGame()
+    game()
+
