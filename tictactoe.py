@@ -68,11 +68,25 @@ def comp(level):
 
 def setGame(): 
     global cells, status
+    status = "player_menu"  # possible options "player_menu", "charactersel_menu", "ignore_menu"
     if status == "ignore_menu":
         pass
     elif status == "player_menu":
         cells = "         "  # game state, start at empty
         cells = [x for x in cells]
+        
+    elif status == "charactersel_menu":
+        pass
+    else:
+        status = "ignore_menu"
+
+def game():
+    if status == "ignore_menu":
+        #game on repeat
+        pass
+    else:
+        pass
+
 # repeat = True
 # gamerepeat = True
 
@@ -88,7 +102,6 @@ def setGame():
 
 
 repeat = True
-status = "player_menu"  # possible options "player_menu", "charactersel_menu", "ignore_menu"
 while repeat:
     setGame()
     game()
